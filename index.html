@@ -129,6 +129,9 @@ html:not(.touch) .hint-touch{display:none}
 .a-finds__head h2{width:100%;margin-top:4px;font:var(--dw) calc(clamp(32px,4vw,60px) * var(--hs,1))/1 var(--fd);color:var(--ink)}
 .a-note{font-size:14px;color:var(--dim)}
 .a-track{display:flex;gap:clamp(28px,4vw,72px);width:max-content;padding:clamp(28px,5vh,50px) calc(50vw - clamp(115px,12vw,170px)) 6px;will-change:transform}
+.a-track > a{display:block;flex:0 0 auto;color:inherit;text-decoration:none}
+.a-track > a figcaption span{color:var(--acc)}
+.a-track > a:hover figcaption b{color:var(--acc)}
 .a-track figure{position:relative;flex:0 0 auto;width:clamp(230px,24vw,340px);--lit:0}
 .a-track figure::before{content:"";position:absolute;left:-30%;right:-30%;top:-18%;bottom:10%;background:radial-gradient(closest-side,color-mix(in srgb,var(--acc) 30%,transparent),transparent);opacity:var(--lit);pointer-events:none}
 .a-track img{position:relative;width:100%;height:auto;aspect-ratio:1000/1415;object-fit:cover;object-position:top;filter:brightness(calc((.26 + .74 * var(--lit)) * var(--bb,1))) sepia(calc(.4 * var(--lit)));box-shadow:0 30px 60px rgba(0,0,0,.65)}
@@ -624,6 +627,7 @@ html:not(.touch) .hint-touch{display:none}
         <p class="a-note">Настоящие страницы наших отчётов. Имена скрыты: работаем по&nbsp;соглашению о&nbsp;конфиденциальности.</p>
       </div>
       <div class="a-track">
+        <a class="a-doclink" href="delo-zudilova.html"><figure><img src="img/zudilov/list-1-t.webp" width="320" height="540" loading="lazy" alt="Опись жалоб прихожан на священника Зудилова, 1767–1769"><figcaption><b>Жалобы на&nbsp;попа, 1767</b>Нажмите — прочитать дело целиком <span aria-hidden="true">→</span></figcaption></figure></a>
         <figure><img src="img/krest-1917-zelenyj.webp" width="1000" height="1690" loading="lazy" alt="Уведомление Красного Креста о приёме раненого солдата, 1917"><figcaption><b>Красный Крест, 1917</b>Уведомление о&nbsp;приёме раненого солдата в&nbsp;лазарет</figcaption></figure>
         <figure><img src="img/otchet-v-cifrah.webp" width="1000" height="1415" loading="lazy" alt="Страница отчёта «Род в цифрах»"><figcaption><b>Род в&nbsp;цифрах</b>13 поколений, самый ранний предок — около 1615&nbsp;года</figcaption></figure>
         <figure><img src="img/georgievskij-spisok.webp" width="1100" height="1679" loading="lazy" alt="Список нижних чинов 8-го Сибирского стрелкового полка, награждённых Георгиевским крестом"><figcaption><b>Георгиевские кавалеры</b>Список награждённых 8-го Сибирского стрелкового полка</figcaption></figure>

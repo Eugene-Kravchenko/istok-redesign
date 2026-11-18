@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#14110d">
+<title>Жалобы на попа Зудилова, 1767–1769 · Исток</title>
+<meta name="description" content="Проба «читалки» документа: опись жалоб прихожан на священника Тимофея Зудилова, 1767–1769, Тобольский архив.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Literata:ital,opsz,wght@0,7..72,300..600;1,7..72,300..600&family=Prata&display=swap" rel="stylesheet">
+<style>
+/* Проба «читалки» документа: листы с лупой + ключевые детали + полный текст с поиском фамилии */
+:root{--bg:#efe6d1;--paper:#f8f2e4;--ink:#1e1912;--dim:#5a4e3e;--acc:#9b2a1d;--dark:#15120e;--cream:#efe6d1;--line:rgba(30,25,18,.2);
+  --fd:'Prata',serif;--ft:'Literata',serif;--fl:'IBM Plex Mono',monospace}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--ft);-webkit-font-smoothing:antialiased}
+::selection{background:var(--acc);color:#fff}
+a{color:inherit}
+h1,h2,h3,p,ol,ul,dl,dd,figure,blockquote{margin:0}
+ol,ul{padding:0;list-style:none}
+img{display:block;max-width:100%}
+button,input{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+
+.z-top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px clamp(16px,4vw,48px);border-bottom:3px double var(--ink);font:400 12px/1.3 var(--fl);letter-spacing:.12em;text-transform:uppercase}
+.z-top a{text-decoration:none}
+.z-top a:hover{color:var(--acc)}
+.z-brand{font:400 21px/1 var(--fd)!important;letter-spacing:0!important;text-transform:none!important}
+
+.z-head{max-width:1320px;margin:0 auto;padding:clamp(36px,7vh,80px) clamp(16px,4vw,48px) clamp(28px,5vh,52px);display:grid;gap:24px 64px;align-items:end}
+.z-head h1{font:400 clamp(40px,6vw,86px)/.98 var(--fd);letter-spacing:-.01em}
+.z-head h1 em{font-family:var(--ft);font-style:italic;font-weight:400;color:var(--acc)}
+.z-lead{font-size:clamp(17px,1.4vw,19px);line-height:1.55;max-width:46ch}
+.z-ref{margin-top:16px;font:400 12px/1.5 var(--fl);letter-spacing:.06em;color:var(--dim)}
+.z-facts{display:flex;flex-wrap:wrap;gap:12px 36px;margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
+.z-facts li{font:400 12px/1.35 var(--fl);letter-spacing:.04em;color:var(--dim)}
+.z-facts b{display:block;margin-bottom:4px;font:400 34px/1 var(--fd);letter-spacing:0;color:var(--ink)}
+
+.z-read{display:grid;border-top:1px solid var(--line)}
+.z-viewer{position:relative;background:var(--dark);color:var(--cream);padding:18px clamp(12px,2vw,28px) 16px}
+.z-stage{position:relative;display:grid;place-items:center;overflow:hidden;cursor:zoom-in;aspect-ratio:.6;max-height:78vh;max-height:78svh;margin:0 auto}
+.z-stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;user-select:none;-webkit-user-drag:none;filter:drop-shadow(0 22px 40px rgba(0,0,0,.55))}
+.z-lens{position:absolute;left:0;top:0;width:250px;height:250px;margin:-125px 0 0 -125px;border-radius:50%;pointer-events:none;border:2px solid rgba(239,230,209,.9);box-shadow:0 18px 40px rgba(0,0,0,.6),inset 0 0 0 1px rgba(0,0,0,.4);background-repeat:no-repeat;background-color:#ddd;opacity:0;transition:opacity .2s}
+.z-stage.lens-on .z-lens{opacity:1}
+.touch .z-lens{display:none}
+.z-miss{position:absolute;inset:8%;display:none;place-items:center;text-align:center;padding:24px;border:1px dashed rgba(239,230,209,.4);font:400 13px/1.6 var(--fl);letter-spacing:.04em;color:rgba(239,230,209,.75)}
+.z-stage.is-missing{cursor:default}
+.z-stage.is-missing .z-miss{display:grid}
+.z-stage.is-missing img,.z-stage.is-missing .z-lens{display:none}
+.z-bar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:14px;font:400 12px/1 var(--fl);letter-spacing:.1em;text-transform:uppercase}
+.z-bar button{appearance:none;border:1px solid rgba(239,230,209,.35);background:none;min-height:44px;min-width:44px;padding:0 14px;cursor:pointer;font:400 12px/1 var(--fl);letter-spacing:.1em;text-transform:uppercase;color:var(--cream)}
+.z-bar button:hover{background:rgba(239,230,209,.1)}
+.z-bar button:disabled{opacity:.35;cursor:default}
+.z-pn b{font:400 18px/1 var(--fd);letter-spacing:0}
+.z-hint{margin-top:10px;font:400 12px/1.4 var(--fl);letter-spacing:.06em;color:rgba(239,230,209,.6);text-align:center}
+.z-thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}
+.z-thumbs button{appearance:none;position:relative;padding:0;border:1px solid transparent;background:#2a241d;cursor:pointer;opacity:.5;transition:opacity .2s,border-color .2s;height:76px;overflow:hidden}
+.z-thumbs button:hover{opacity:.8}
+.z-thumbs button[aria-current="true"]{opacity:1;border-color:var(--cream)}
+.z-thumbs img{width:100%;height:100%;object-fit:cover;object-position:top}
+.z-thumbs span{position:absolute;left:6px;bottom:5px;font:400 12px/1 var(--fl);color:var(--cream);text-shadow:0 1px 3px #000}
+
+.z-side{padding:clamp(28px,4vw,56px) clamp(16px,4vw,56px) 90px;background:var(--paper)}
+.z-tabs{display:flex;flex-wrap:wrap;border-bottom:1px solid var(--line);margin-bottom:34px}
+.z-tabs button{appearance:none;border:0;background:none;padding:14px 0;margin:0 26px -1px 0;font:500 13px/1 var(--fl);letter-spacing:.12em;text-transform:uppercase;color:var(--dim);cursor:pointer;border-bottom:2px solid transparent}
+.z-tabs button:hover{color:var(--ink)}
+.z-tabs button[aria-selected="true"]{color:var(--ink);border-color:var(--acc)}
+.z-panel[hidden]{display:none}
+.z-panel h2{font:400 clamp(26px,2.4vw,34px)/1.12 var(--fd);margin:52px 0 16px}
+.z-panel h2:first-child{margin-top:0}
+.z-panel p{max-width:62ch}
+.z-panel p + p{margin-top:12px}
+.z-scenes li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 18px;align-items:start;padding:20px 0;border-top:1px solid var(--line)}
+.z-scenes li:last-child{border-bottom:1px solid var(--line)}
+.z-scenes h3{font:400 22px/1.2 var(--fd)}
+.z-where{grid-column:1;font:400 12px/1.4 var(--fl);letter-spacing:.06em;color:var(--dim)}
+.z-scenes blockquote{grid-column:1/-1;margin-top:4px;padding-left:16px;border-left:1px solid var(--acc);font-style:italic;color:var(--ink)}
+.z-go{grid-column:2;grid-row:1/3;align-self:center;appearance:none;border:1px solid var(--ink);background:none;min-height:44px;padding:0 14px;cursor:pointer;font:400 12px/1 var(--fl);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;transition:background .2s,color .2s}
+.z-go:hover{background:var(--ink);color:var(--paper)}
+.z-price{width:100%;border-collapse:collapse}
+.z-price th,.z-price td{padding:14px 12px 14px 0;border-bottom:1px solid var(--line);text-align:left;vertical-align:baseline}
+.z-price th{font:400 12px/1.3 var(--fl);letter-spacing:.08em;text-transform:uppercase;color:var(--dim);border-bottom-color:var(--ink)}
+.z-price td:first-child{font:400 19px/1.25 var(--fd);width:38%}
+.z-price small{display:block;margin-top:4px;font-size:14px;color:var(--dim)}
+.z-gl{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px 22px}
+.z-gl dt{font:400 18px/1.4 var(--fd)}
+.z-gl dd{color:var(--dim)}
+.z-note{margin-top:18px;padding:18px 20px;background:rgba(155,42,29,.06);border-left:2px solid var(--acc)}
+
+.z-find{position:sticky;top:0;z-index:2;margin:0 0 26px;padding:14px 0 12px;background:var(--paper);border-bottom:1px solid var(--line)}
+.z-find label{display:block;font:400 12px/1.3 var(--fl);letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+.z-find input{width:100%;margin-top:8px;padding:10px 0 8px;border:0;border-bottom:1.5px solid var(--ink);background:none;outline:0;font:italic 400 24px/1.2 var(--ft)}
+.z-find input::placeholder{color:rgba(30,25,18,.48)}
+.z-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.z-chips button{appearance:none;border:1px solid var(--line);background:none;min-height:34px;padding:0 12px;cursor:pointer;font:400 13px/1 var(--fl)}
+.z-chips button:hover{border-color:var(--ink)}
+.z-found{margin-top:10px;font:400 13px/1.5 var(--fl);color:var(--dim);min-height:1.5em}
+.z-found button{appearance:none;border:0;background:none;padding:0;margin-left:6px;cursor:pointer;color:var(--acc);font:inherit;text-decoration:underline;text-underline-offset:3px}
+.z-text h3{margin:34px 0 10px;font:400 22px/1.2 var(--fd)}
+.z-text p{margin-top:10px;max-width:68ch}
+.z-text .z-intro{font-style:italic;color:var(--dim)}
+.z-text mark{background:rgba(155,42,29,.18);color:inherit;box-shadow:0 1.5px 0 var(--acc);padding:0 1px}
+.z-list{display:flex;align-items:center;gap:10px;margin:22px 0 4px;font:400 12px/1 var(--fl);letter-spacing:.1em;text-transform:uppercase;color:var(--acc)}
+.z-list::after{content:"";flex:1;height:1px;background:rgba(155,42,29,.4)}
+.z-list button{appearance:none;border:0;background:none;padding:0;cursor:pointer;color:inherit;font:inherit;letter-spacing:inherit;text-transform:inherit;text-decoration:underline;text-underline-offset:3px}
+
+.z-end{background:var(--dark);color:var(--cream);padding:clamp(70px,10vh,110px) clamp(16px,4vw,48px) calc(70px + env(safe-area-inset-bottom));text-align:center}
+.z-end h2{font:400 clamp(30px,4vw,52px)/1.08 var(--fd);max-width:20ch;margin:0 auto}
+.z-end p{margin:16px auto 0;max-width:46ch;color:rgba(239,230,209,.78)}
+.z-btns{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:30px}
+.z-btns a{display:inline-flex;align-items:center;min-height:52px;padding:0 24px;border:1px solid var(--cream);text-decoration:none;font:400 12px/1 var(--fl);letter-spacing:.14em;text-transform:uppercase;transition:background .2s,color .2s}
+.z-btns a:first-child{background:var(--cream);color:var(--dark)}
+.z-btns a:hover{background:var(--acc);border-color:var(--acc);color:#fff}
+
+.z-full{position:fixed;inset:0;z-index:50;background:rgba(10,8,6,.96);display:flex;flex-direction:column}
+.z-full[hidden]{display:none}
+.z-full__bar{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 12px;color:var(--cream);font:400 12px/1 var(--fl);letter-spacing:.1em;text-transform:uppercase}
+.z-full__bar div{display:flex;gap:8px}
+.z-full__bar button{appearance:none;min-width:44px;min-height:44px;border:1px solid rgba(239,230,209,.35);background:none;color:var(--cream);cursor:pointer;font:400 18px/1 var(--fl)}
+.z-full__scroll{flex:1;overflow:auto;-webkit-overflow-scrolling:touch;cursor:grab}
+.z-full__scroll img{width:var(--zw,100%);max-width:none;margin:0 auto}
+
+@media(min-width:1000px){
+  .z-head{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr)}
+  .z-read{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .z-viewer{position:sticky;top:0;height:100vh;height:100svh;display:flex;flex-direction:column}
+  .z-stage{flex:1;min-height:0;aspect-ratio:auto;max-height:none;width:100%}
+}
+@media(max-width:600px){
+  .z-scenes li{grid-template-columns:1fr}
+  .z-go{grid-column:1;grid-row:auto;justify-self:start;margin-top:8px}
+  .z-price td:first-child{width:auto}
+  .z-gl{grid-template-columns:1fr;gap:2px}
+  .z-gl dd{margin-bottom:12px}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="z-top">
+  <a class="z-back" href="index.html?v=a">← Три варианта</a>
+  <a class="z-brand" href="index.html?v=a">Исток</a>
+  <a href="https://t.me/+79220089761" target="_blank" rel="noopener">Telegram</a>
+</header>
+
+<section class="z-head">
+  <div>
+    <h1>Жалобы на&nbsp;попа <em>Зудилова</em></h1>
+    <p class="z-ref">Тобольский архив · ф.&nbsp;И156, оп.&nbsp;2, д.&nbsp;2294, л.&nbsp;40–43 · 1767–1769</p>
+  </div>
+  <div>
+    <p class="z-lead">Крестьяне девяти деревень прихода Николаевской церкви села Казанского записали всё, что брал с&nbsp;них священник Тимофей Зудилов, — за&nbsp;венчание, похороны, молитву младенцу. И&nbsp;за&nbsp;что бил.</p>
+    <ul class="z-facts">
+      <li><b>9</b>деревень</li>
+      <li><b>50+</b>имён крестьян</li>
+      <li><b>4</b>листа скорописи</li>
+      <li><b>3</b>года жалоб</li>
+    </ul>
+  </div>
+</section>
+
+<section class="z-read">
+  <div class="z-viewer" aria-label="Листы документа">
+    <div class="z-stage" id="zStage" role="button" tabindex="0" aria-label="Открыть лист крупно">
+      <img id="zImg" src="img/zudilov/list-1.webp" alt="Лист 40 описи жалоб на священника Зудилова, скоропись XVIII века">
+      <div class="z-lens" id="zLens" aria-hidden="true"></div>
+      <p class="z-miss">Здесь будет скан листа.<br>Файлы сканов пока не добавлены.</p>
+    </div>
+    <div class="z-bar">
+      <button type="button" id="zPrev" aria-label="Предыдущий лист">←</button>
+      <span class="z-pn">Лист <b id="zNum">40</b> · <span id="zOf">1 из 4</span></span>
+      <button type="button" id="zNext" aria-label="Следующий лист">→</button>
+    </div>
+    <p class="z-hint"><span class="hint-desk">Наведите на лист — появится лупа. Нажмите — откроется крупно.</span><span class="hint-touch">Нажмите на лист, чтобы открыть его крупно.</span></p>
+    <div class="z-thumbs" id="zThumbs"></div>
+  </div>
+
+  <div class="z-side">
+    <div class="z-tabs" role="tablist">
+      <button type="button" role="tab" id="tabMain" aria-controls="pMain" aria-selected="true">Главное</button>
+      <button type="button" role="tab" id="tabText" aria-controls="pText" aria-selected="false">Полный текст</button>
+    </div>
+
+    <div class="z-panel" id="pMain" role="tabpanel" aria-labelledby="tabMain">
+      <h2>Что происходит</h2>
+      <p>Это «опись» — список жалоб, который прихожане составили на&nbsp;своего священника. По&nbsp;деревням, двор за&nbsp;двором: кто сколько отдал, кого не&nbsp;допустили к&nbsp;исповеди, кого поп побил.</p>
+      <p>Подписать её староста Семён Батурин не&nbsp;смог: «вместо старосты Семена Батурина ево прозьбой крестьянин Иван Пневской руку приложил».</p>
+
+      <h2>Шесть сцен</h2>
+      <ol class="z-scenes">
+        <li><h3>Могила мелка</h3><p class="z-where">Деревня Яркова · л. 40</p><button type="button" class="z-go" data-page="1">л. 40 →</button>
+          <blockquote>«…показалось ему священнику могила мелка, и зато ево Улыбина бил своеручно нещадно и после того покойницу погрёб, а за похороны взял деньги один рубль».</blockquote></li>
+        <li><h3>Пивом в&nbsp;глаза</h3><p class="z-where">Деревня Яркова · л. 40–41</p><button type="button" class="z-go" data-page="2">л. 41 →</button>
+          <blockquote>«…оная попадья набрала в рот пива и прыскала к нему Пургину в глаза, а конопля не отдала».</blockquote></li>
+        <li><h3>Деньги взял — венчать не&nbsp;стал</h3><p class="z-where">Деревня Долинина · л. 40</p><button type="button" class="z-go" data-page="1">л. 40 →</button>
+          <blockquote>«Пуд Казанцов, священнику Зудилову отдал 3 рубля чтоб его обвенчать которые он взял только не обвенча, неведомо для чего, отослал для венчания в Красноярскую слободу».</blockquote></li>
+        <li><h3>Зарубит косою</h3><p class="z-where">Деревня Казанцева · л. 42</p><button type="button" class="z-go" data-page="3">л. 42 →</button>
+          <blockquote>«…в сенокосное время завешивает под косьбу травы копен на тысячу и больше, а крестьян на то место недопущает и кто взайдет хвалился зарубит косою».</blockquote></li>
+        <li><h3>Уехал по&nbsp;ягоды</h3><p class="z-where">Деревня Казанцева · л. 42</p><button type="button" class="z-go" data-page="3">л. 42 →</button>
+          <blockquote>«…звал попа Зудилова к родильнице с молитвой и оной поп не пошёл, а сем поехал для бранья ягод, и родильница без молитв умер».</blockquote></li>
+        <li><h3>Бороду выдрал</h3><p class="z-where">Деревня Ренева · л. 43</p><button type="button" class="z-go" data-page="4">л. 43 →</button>
+          <blockquote>«…поп Зудилов в рясах и со крестом господним шёл сосвятое водой и усильно ухватил у него Русакова пятеры чарки… и зато поп Зудилов бил ево до крови и бороду выдрал».</blockquote></li>
+      </ol>
+
+      <h2>Прейскурант попа Зудилова</h2>
+      <table class="z-price">
+        <thead><tr><th scope="col">За что</th><th scope="col">Сколько брал</th></tr></thead>
+        <tbody>
+          <tr><td>Венчание</td><td>от 1&nbsp;р. 50&nbsp;к. до 5&nbsp;р. и&nbsp;10 аршин тонкого холста<small>Афанасия Ваганова после этого всё равно отослал венчаться в&nbsp;другой приход</small></td></tr>
+          <tr><td>Второй брак</td><td>3&nbsp;р. — 3&nbsp;р. 50&nbsp;к.</td></tr>
+          <tr><td>Похороны</td><td>1&nbsp;р.; со&nbsp;Степана Быкова — ещё четверть овса<small>и просил два рубля сверху, а&nbsp;за отказ побил</small></td></tr>
+          <tr><td>Молитва и&nbsp;крещение младенца</td><td>15&nbsp;к. и&nbsp;двух поросят «за тридцать копеек»<small>или день работы в&nbsp;доме попа</small></td></tr>
+          <tr><td>«Записать бывшим у&nbsp;исповеди»</td><td>деньги, два пуда рыбы, 40&nbsp;к.<small>а&nbsp;записать — так и&nbsp;не&nbsp;записал</small></td></tr>
+        </tbody>
+      </table>
+
+      <h2>Почему дело неоднозначное</h2>
+      <p>Это голос одной стороны — прихожан. Что ответил священник и&nbsp;чем кончилось дело, по&nbsp;этим четырём листам не&nbsp;видно. Ответ ищут в&nbsp;остальных листах дела и&nbsp;в&nbsp;других делах духовного ведомства.</p>
+      <p class="z-note">Так устроено исследование: один документ — это голос, а&nbsp;не&nbsp;приговор. Мы&nbsp;сводим вместе разные источники и&nbsp;честно показываем, где сведения заканчиваются.</p>
+
+      <h2>Слова из&nbsp;документа</h2>
+      <dl class="z-gl">
+        <dt>Требы</dt><dd>службы по&nbsp;просьбе прихожан: венчание, крещение, похороны, молитва.</dd>
+        <dt>«Написал небывшим»</dt><dd>отметил, что человек не&nbsp;был у&nbsp;исповеди. За&nbsp;это полагался штраф.</dd>
+        <dt>Аршин</dt><dd>около 71&nbsp;см.</dd>
+        <dt>Пуд</dt><dd>около 16,4&nbsp;кг.</dd>
+        <dt>Четверть</dt><dd>мера зерна, около 210 литров.</dd>
+        <dt>Своеручно</dt><dd>своей рукой, сам.</dd>
+      </dl>
+    </div>
+
+    <div class="z-panel" id="pText" role="tabpanel" aria-labelledby="tabText" hidden>
+      <div class="z-find">
+        <label for="zSearch">Есть ли тут ваша фамилия?</label>
+        <input id="zSearch" type="search" placeholder="например, Быков" autocomplete="off">
+        <div class="z-chips" aria-label="Примеры фамилий"><button type="button">Казанцев</button><button type="button">Быков</button><button type="button">Куроптев</button><button type="button">Шевелев</button><button type="button">Бухалов</button></div>
+        <p class="z-found" id="zFound" aria-live="polite"></p>
+      </div>
+      <div class="z-text" id="zText">
+        <p class="z-intro">Расшифровка — Евгений Кравченко. Орфография документа сохранена.</p>
+        <div class="z-list" data-page="1"><button type="button" data-page="1">л. 40</button></div>
+        <p>Сопись что священником Зудиловым за разные требы и усильством брано было о том значит ниже сего</p>
+        <h3>Деревни Долининой</h3>
+        <p>Малафей Ишин, Иван Пелымский, Леонтей Казанцев, Петр Долинин, Егор Власов, прошлого 1768 года в петров пост на исповедь святому причастию приезжали, а ево священника в доме небыло, и как в дом свой прибыл то заставил их Ишина с товарищами домашнюю его Зудилова работать работу и после той работы и исповеди и святому причастию допустил.</p>
+        <p>Пуд Казанцов, священнику Зудилову отдал 3 рубля чтоб его обвенчать которые он взял только не обвенча, неведомо для чего, отослал для венчания в Красноярскую слободу в которой священником Иконниковым обвенчан, за венчание дано один рубль да четыре четверти пшеницы.</p>
+        <p>С крестьянина Федора Софронова священник Зудилов взял за венчание деньги два рубля и четы четверти пшеницы.</p>
+        <h3>Деревни Ярковой</h3>
+        <p>Крестьянин Василий Улыбин привез к церкви умершую жену ево из благословления священника Зудилова выкопав могилу в два аршина с половиной, показалось ему священнику могила мелка, и зато ево Улыбина бил своеручно нещадно и после того покойницу погрёб, а за похороны взял деньги один рубль.</p>
+        <p>У него ж Улыбина за венчание второго брака взял денег три рубля</p>
+        <p>1769 года в священное время священника Зудилова жена в дом ко крестьянину Герасиму Пургину и в небытность в доме хозяев покрала конопли пятнадцать горстей с которым он Пургин её попадью и опомошнил в доме у крестьянина Степана Сабаева и просил то конопле обратно, на что оная попадья набрала в рот пива и прыскала к нему Пургину в глаза, а конопля не отдала.</p>
+        <div class="z-list" data-page="2"><button type="button" data-page="2">л. 41</button></div>
+        <p>Афанасий Ваганов, объявил священник Зудилов взял с него за венчание пять рублей, десять аршин холста тонкого, и по взятии неведомо для чего необвенчал и отослал венчать в Красноярскую слободу к священнику Невочикову, коем и обвенчал и за венчание взял два рубля пятьдесят копеек</p>
+        <p>Крестьянин Федор Зорин объявил будучи в доме у крестьянина Афанасия Малцова священник Зудилов неведомо за что бил ево Зорина своеручно.</p>
+        <p>Крестьянин Евдоким Суботин священнику Зудилову отдал денег два рубля за венчание.</p>
+        <p>Крестьянин Игнатей Крылов священнику Зудилову отдал за венчание три рубля.</p>
+        <p>С крестьянина Василия Медведева священник Зудилов взял за молитву и за крещение младенца пятнадцать копеек, да дву поросят за тридцать копеек.</p>
+        <h3>Деревни Нижних Ярков</h3>
+        <p>Крестьянин Степан Куроптев, за молитву младенца домовой ево попа работу один день работал.</p>
+        <p>Семен Куроптев за молитву младенца работал к хоромян(?) двери.</p>
+        <p>У Антона Валова взял священник Зудилов железа пуд два топора, две косы и за оное требовал платы толком незнаемо для чего неотдал.</p>
+        <p>Крестьянина Ивана Брекоткина сына Анисима написал небывшим у исповеди исвятого причастия коей тогда был полу году.</p>
+        <p>Крестьянина Петра Рябова священник Зудилов взял со второго брака за венчание три рубли пятьдесят копеек.</p>
+        <p>Крестьянина Федора Метелева священник Зудилов взял за венчание денег четыре рубля.</p>
+        <div class="z-list" data-page="3"><button type="button" data-page="3">л. 42</button></div>
+        <p>С крестьянина Семена Куроптева священник Зудилов за венчание взял три рубля тридцать копеек.</p>
+        <h3>Деревни Боровлянки</h3>
+        <p>Крестьян Степан Штинников, Евтихий Алферов, Борис Крюков, Иван Шевелев, Михайло Волков, 1769 года в успенской пост к священнику Зудилову на исповедь и святому причастию приходили, как он на что ведь не принял, и взял с них деньгами, пообещал записать бывшими только не записал.</p>
+        <h3>Деревни Казанцовой</h3>
+        <p>Тимофей Кошуков с женой, Иван Огорелков, брат Прохор и сестра Афимья приходили на исповедь коих и не принял, а велел собраться большее.</p>
+        <p>Десятник Клеметей Томних(?) с обывателями объявили священник Зудилов в сенокосное время завешивает под косьбу травы копен на тысячу и больше, а крестьян на то место недопущает и кто взайдет хвалился зарубит косою.</p>
+        <p>Яков Долгих приходил к священнику Зудилову на исповедь и оной для чего непринял.</p>
+        <p>С крестьянина Степана Быкова священник Зудилов взял за похороны денег рубль да четверть овса и ещё просил два рубля коих по убеждению ево дать нечево зато поп бил ево Быкова своеручно.</p>
+        <p>С крестьянина Михайла Феклистова поп Зудилов взял за венчание рубль пятьдесят копеек.</p>
+        <p>Крестьянина Леонтия Быкова коей нем и глух поп Зудилов пишет каждогодно небывшим у исповеди, а к причастию не допускает.</p>
+        <p>Филипа Бухалова неведомо для чего к причастию не допустил.</p>
+        <p>Крестьянин Иван Шевелев звал попа Зудилова к родильнице с молитвой и оной поп не пошёл, а сем поехал для бранья ягод, и родильница без молитв умер.</p>
+        <div class="z-list" data-page="4"><button type="button" data-page="4">л. 43</button></div>
+        <p>Церковной староста Нифонт Бухалов объявил поп Зудилов брал церковные восемь плах на домовое строение взаем, а девятую усилено, коих и не отдает и после того брал плах на то же строение самовольно, а обратно не отдал.</p>
+        <h3>Деревни Селезневой</h3>
+        <p>В 1767 году Крестьянская жена Фёкла Семибратова с двумя дочермии попу Зудлову на исповедь приходили коих и не принял, а написал небывшими.</p>
+        <p>Крестьянские жены Катерина Третьякова, Матрена Фугаевых к попу Зудилову на исповедь приходили покой не принял, а написал небывшими.</p>
+        <p>С крестьянина Петра Гребенщикова поп Зудилов за венчание свадьбы взял два рубля, а свадьбу не обвенчал и отослал для венчания в Красноярскую слободу к священнику Иконникову</p>
+        <p>С крестьянина Александра Долгушина, поп Зудилов взял за венчание три рубли пятьдесят копеек.</p>
+        <h3>Деревни Шадринской</h3>
+        <p>С крестьянина Никиты Попкова поп Зудилов взял за венчание свадьбы два рубля пятьдесят копеек.</p>
+        <h3>Деревни Реневой</h3>
+        <p>Крестьянин Тимофей Русаков в 1767 году в спасов день подле обедни продавал он Русаков чарки, а поп Зудилов в рясах и со крестом господним шёл сосвятое водой и усильно ухватил у него Русакова пятеры чарки, и он Русаков не стал отдавать и зато поп Зудилов бил ево до крови и бороду выдрал.</p>
+        <p>С крестьянина Захара Санникова поп Зудилов Взял за венчание два рубля пятнадцать копеек.</p>
+        <h3>Деревни Яровской</h3>
+        <p>В 1767 году поп Зудилов взял с крестьянина Бориса Обрядова два пуда рыбы, с Семена Шепелина денег сорок копеек и что обещал написать бывшими у исповеди и святого причастия, тоимо не написал</p>
+        <p>У крестьянина Михайла Дорохина поп Зудилов украл с лугу сена двадцать пять копен.</p>
+        <p>И подлиннаго рукоприложение. К сей описи вместо старосты Семена Батурина ево прозьбой крестьянин Иван Пневской руку приложил</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="z-end">
+  <h2>Такие документы мы&nbsp;ищем о&nbsp;вашей семье</h2>
+  <p>Находим, читаем скоропись и&nbsp;рассказываем, что в&nbsp;ней. Подарите родителям историю их&nbsp;рода к&nbsp;Новому году.</p>
+  <div class="z-btns">
+    <a href="index.html?v=a#a-make">Собрать подарок</a>
+    <a href="https://t.me/+79220089761" target="_blank" rel="noopener">Написать в Telegram</a>
+  </div>
+</section>
+
+<div class="z-full" id="zFull" hidden role="dialog" aria-modal="true" aria-label="Лист крупно">
+  <div class="z-full__bar"><span id="zFullNum">Лист 40 · 1 из 4</span><div><button type="button" id="zOut" aria-label="Уменьшить">−</button><button type="button" id="zIn" aria-label="Увеличить">+</button><button type="button" id="zClose" aria-label="Закрыть">×</button></div></div>
+  <div class="z-full__scroll" id="zScroll"><img id="zFullImg" src="img/zudilov/list-1.webp" alt="Лист 40 крупно"></div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  var TOUCH = window.matchMedia && matchMedia('(hover: none), (pointer: coarse)').matches;
+  document.documentElement.classList.toggle('touch', !!TOUCH);
+  var css = document.createElement('style');
+  css.textContent = TOUCH ? '.hint-desk{display:none}' : '.hint-touch{display:none}';
+  document.head.appendChild(css);
+
+  var PAGES = [1, 2, 3, 4].map(function (n) { return 'img/zudilov/list-' + n + '.webp'; });
+  var cur = 1;
+  var stage = document.getElementById('zStage'), img = document.getElementById('zImg'), lens = document.getElementById('zLens');
+  var num = document.getElementById('zNum'), prev = document.getElementById('zPrev'), next = document.getElementById('zNext'), thumbs = document.getElementById('zThumbs');
+  var full = document.getElementById('zFull'), fullImg = document.getElementById('zFullImg'), fullNum = document.getElementById('zFullNum'), scroll = document.getElementById('zScroll');
+
+  thumbs.innerHTML = PAGES.map(function (src, i) {
+    return '<button type="button" data-page="' + (i + 1) + '" aria-label="Лист ' + (40 + i) + '"><img src="' + src.replace('.webp', '-t.webp') + '" alt="" loading="lazy" onerror="this.style.visibility=\'hidden\'"><span>л. ' + (40 + i) + '</span></button>';
+  }).join('');
+
+  img.addEventListener('error', function () { stage.classList.add('is-missing'); });
+  img.addEventListener('load', function () { stage.classList.remove('is-missing'); lens.style.backgroundImage = 'url("' + img.currentSrc + '")'; });
+
+  function show(n) {
+    cur = Math.max(1, Math.min(PAGES.length, n));
+    img.src = PAGES[cur - 1];
+    img.alt = 'Лист ' + (39 + cur) + ' описи жалоб на священника Зудилова, скоропись XVIII века';
+    num.textContent = 39 + cur; document.getElementById('zOf').textContent = cur + ' из ' + PAGES.length;
+    prev.disabled = cur === 1; next.disabled = cur === PAGES.length;
+    Array.prototype.forEach.call(thumbs.children, function (b) { b.setAttribute('aria-current', +b.getAttribute('data-page') === cur ? 'true' : 'false'); });
+    if (!full.hidden) { fullImg.src = PAGES[cur - 1]; fullNum.textContent = 'Лист ' + (39 + cur) + ' · ' + cur + ' из ' + PAGES.length; }
+  }
+  prev.addEventListener('click', function () { show(cur - 1); });
+  next.addEventListener('click', function () { show(cur + 1); });
+  thumbs.addEventListener('click', function (e) { var b = e.target.closest('[data-page]'); if (b) show(+b.getAttribute('data-page')); });
+
+  /* лупа: увеличение 2,6× под курсором */
+  var Z = 2.6;
+  stage.addEventListener('pointermove', function (e) {
+    if (e.pointerType !== 'mouse' || stage.classList.contains('is-missing')) return;
+    var s = stage.getBoundingClientRect(), r = img.getBoundingClientRect();
+    var iw = img.naturalWidth, ih = img.naturalHeight; if (!iw) return;
+    var sc = Math.min(r.width / iw, r.height / ih), w = iw * sc, h = ih * sc, ox = r.left + (r.width - w) / 2, oy = r.top + (r.height - h) / 2;
+    var x = e.clientX - ox, y = e.clientY - oy;
+    if (x < 0 || y < 0 || x > w || y > h) { stage.classList.remove('lens-on'); return; }
+    stage.classList.add('lens-on');
+    lens.style.transform = 'translate(' + (e.clientX - s.left) + 'px,' + (e.clientY - s.top) + 'px)';
+    lens.style.backgroundSize = (w * Z) + 'px ' + (h * Z) + 'px';
+    lens.style.backgroundPosition = (125 - x * Z) + 'px ' + (125 - y * Z) + 'px';
+  });
+  stage.addEventListener('pointerleave', function () { stage.classList.remove('lens-on'); });
+
+  /* крупный просмотр */
+  var zw = 100;
+  function openFull() {
+    if (stage.classList.contains('is-missing')) return;
+    zw = window.innerWidth < 700 ? 220 : 100;
+    scroll.style.setProperty('--zw', zw + '%');
+    fullImg.src = PAGES[cur - 1]; fullImg.alt = img.alt;
+    fullNum.textContent = 'Лист ' + (39 + cur) + ' · ' + cur + ' из ' + PAGES.length;
+    full.hidden = false; document.body.style.overflow = 'hidden';
+    document.getElementById('zClose').focus();
+  }
+  function closeFull() { full.hidden = true; document.body.style.overflow = ''; stage.focus(); }
+  stage.addEventListener('click', openFull);
+  stage.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openFull(); } });
+  document.getElementById('zClose').addEventListener('click', closeFull);
+  document.getElementById('zIn').addEventListener('click', function () { zw = Math.min(400, zw + 40); scroll.style.setProperty('--zw', zw + '%'); });
+  document.getElementById('zOut').addEventListener('click', function () { zw = Math.max(60, zw - 40); scroll.style.setProperty('--zw', zw + '%'); });
+  document.addEventListener('keydown', function (e) {
+    if (full.hidden) { if (e.target.tagName !== 'INPUT') { if (e.key === 'ArrowLeft') show(cur - 1); if (e.key === 'ArrowRight') show(cur + 1); } return; }
+    if (e.key === 'Escape') closeFull(); if (e.key === 'ArrowLeft') show(cur - 1); if (e.key === 'ArrowRight') show(cur + 1);
+  });
+  var drag = null;
+  scroll.addEventListener('pointerdown', function (e) { if (e.pointerType === 'mouse') { drag = { x: e.clientX, y: e.clientY, l: scroll.scrollLeft, t: scroll.scrollTop }; scroll.style.cursor = 'grabbing'; } });
+  window.addEventListener('pointermove', function (e) { if (drag) { scroll.scrollLeft = drag.l - (e.clientX - drag.x); scroll.scrollTop = drag.t - (e.clientY - drag.y); } });
+  window.addEventListener('pointerup', function () { drag = null; scroll.style.cursor = ''; });
+
+  /* вкладки */
+  var tabs = [document.getElementById('tabMain'), document.getElementById('tabText')];
+  function tab(i) {
+    tabs.forEach(function (t, k) { t.setAttribute('aria-selected', k === i ? 'true' : 'false'); document.getElementById(t.getAttribute('aria-controls')).hidden = k !== i; });
+  }
+  tabs.forEach(function (t, i) { t.addEventListener('click', function () { tab(i); }); });
+
+  /* «Лист N →» из сцен и из текста: показать лист (на телефоне — прокрутить к нему) */
+  function goPage(n) {
+    show(n);
+    if (window.innerWidth < 1000) document.querySelector('.z-viewer').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('.z-go, .z-list button, .z-found button'); if (!b) return;
+    goPage(+b.getAttribute('data-page'));
+  });
+
+  /* поиск фамилии в полном тексте */
+  var box = document.getElementById('zText'), input = document.getElementById('zSearch'), found = document.getElementById('zFound');
+  var original = box.innerHTML;
+  function norm(s) { return s.toLowerCase().replace(/ё/g, 'е'); }
+  function find(q) {
+    box.innerHTML = original;
+    q = q.trim();
+    if (q.length < 2) { found.textContent = ''; return; }
+    /* ищем по основе слова: «Быков» найдёт и «Быкова» */
+    var stem = norm(q).replace(/(ова|ева|ина|ов|ев|ин|ын|ой|ий|ая)$/, '');
+    if (stem.length < 3) stem = norm(q);
+    var walker = document.createTreeWalker(box, NodeFilter.SHOW_TEXT, null), nodes = [], n;
+    while ((n = walker.nextNode())) { if (!n.parentNode.closest('button')) nodes.push(n); }
+    var markers = box.querySelectorAll('.z-list');
+    var count = 0, pages = {}, first = null;
+    nodes.forEach(function (node) {
+      var t = node.textContent, low = norm(t), idx = low.indexOf(stem);
+      if (idx < 0) return;
+      var pg = 1;
+      Array.prototype.forEach.call(markers, function (mk) { if (mk.compareDocumentPosition(node) & Node.DOCUMENT_POSITION_FOLLOWING) pg = +mk.getAttribute('data-page'); });
+      var frag = document.createDocumentFragment(), last = 0;
+      while (idx >= 0) {
+        var end = idx + stem.length; while (end < t.length && /[а-яёa-z]/i.test(t[end])) end++;
+        frag.appendChild(document.createTextNode(t.slice(last, idx)));
+        var m = document.createElement('mark'); m.textContent = t.slice(idx, end); frag.appendChild(m);
+        if (!first) first = m;
+        count++; last = end; idx = low.indexOf(stem, end);
+      }
+      frag.appendChild(document.createTextNode(t.slice(last)));
+      pages[pg] = 1;
+      node.parentNode.replaceChild(frag, node);
+    });
+    if (!count) { found.textContent = 'В этих четырёх листах не нашлось. А в архивах — тысячи таких дел.'; return; }
+    found.innerHTML = 'Нашлось: ' + count + ' ·' + Object.keys(pages).map(function (p) { return '<button type="button" data-page="' + p + '">л. ' + (39 + +p) + '</button>'; }).join('');
+    if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+  var t0 = 0;
+  input.addEventListener('input', function () { clearTimeout(t0); t0 = setTimeout(function () { find(input.value); }, 250); });
+  document.querySelector('.z-chips').addEventListener('click', function (e) {
+    var b = e.target.closest('button'); if (!b) return;
+    input.value = b.textContent; find(input.value);
+  });
+
+  show(1);
+})();
+</script>
+</body>
+</html>
