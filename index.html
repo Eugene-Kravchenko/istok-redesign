@@ -9,7 +9,8 @@
 <meta name="description" content="Прототип новогоднего лендинга «Исток» в трёх вариантах: свет над архивом, камера в прошлое, род во времени.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&family=Golos+Text:wght@400;500;600&family=Jost:wght@300;400;500&family=Literata:ital,opsz,wght@0,7..72,300..600;1,7..72,300..600&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Onest:wght@400;500&family=Oranienbaum&family=Prata&family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Tenor+Sans&family=Unbounded:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&family=Golos+Text:wght@400;500;600&family=Jost:wght@300;400;500&family=Literata:ital,opsz,wght@0,7..72,300..600;1,7..72,300..600&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Onest:wght@400;500&family=Oranienbaum&family=Prata&family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Tenor+Sans&family=Unbounded:wght@200;300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&family=Golos+Text:wght@400;500;600&family=Jost:wght@300;400;500&family=Literata:ital,opsz,wght@0,7..72,300..600;1,7..72,300..600&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Onest:wght@400;500&family=Oranienbaum&family=Prata&family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Tenor+Sans&family=Unbounded:wght@200;300;400;500&display=swap"></noscript>
 <style>
 /* =====================================================================
    Исток · прототип новогоднего лендинга, три варианта (A / B / C)
@@ -84,15 +85,16 @@ html:not(.touch) .hint-touch{display:none}
 .a-mono{font:400 12px/1.3 var(--fl);letter-spacing:.2em;text-transform:uppercase;color:var(--acc)}
 
 .a-hero{position:relative;height:100vh;height:100svh;min-height:520px}
-.a-stage{position:absolute;inset:0;overflow:hidden;background:var(--bg);--lx:62%;--ly:42%;--lr:220px;touch-action:pan-y}
-.a-lit{position:absolute;inset:0;
-  -webkit-mask-image:radial-gradient(circle var(--lr) at var(--lx) var(--ly),#000 0,rgba(0,0,0,.92) 30%,rgba(0,0,0,.42) 64%,rgba(0,0,0,calc(.05 * var(--bb,1))) 100%);
-          mask-image:radial-gradient(circle var(--lr) at var(--lx) var(--ly),#000 0,rgba(0,0,0,.92) 30%,rgba(0,0,0,.42) 64%,rgba(0,0,0,calc(.05 * var(--bb,1))) 100%)}
+.a-stage{position:absolute;inset:0;overflow:hidden;background:var(--bg);touch-action:pan-y;--ds:2400px;--dr:220px;--gs:520px;--base:5%}
+.a-lit{position:absolute;inset:0}
+/* темнота с «окном» лампы: готовый слой, который только сдвигается и масштабируется — без перерисовки, легко для телефона */
+.a-dark{position:absolute;left:0;top:0;width:var(--ds);height:var(--ds);margin:calc(var(--ds) / -2) 0 0 calc(var(--ds) / -2);pointer-events:none;will-change:transform,opacity;transform:translate3d(62vw,42vh,0);
+  background:radial-gradient(circle var(--dr) at 50% 50%,transparent 0,color-mix(in srgb,var(--bg) 8%,transparent) 30%,color-mix(in srgb,var(--bg) 58%,transparent) 64%,color-mix(in srgb,var(--bg) calc(100% - var(--base) * var(--bb,1)),transparent) 100%)}
 .a-doc{position:absolute;left:50%;top:44%;width:100vw;height:100vh;container-type:size;--dim:1;transform:translate(-50%,-50%)}
 @media(max-width:759px){.a-doc{top:50%}}
 .a-doc img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.12) brightness(calc(var(--bb,1) * var(--dim,1)))}
 .a-tint{position:absolute;inset:0;background:var(--acc);mix-blend-mode:multiply;opacity:.6}
-.a-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle calc(var(--lr) * 1.1) at var(--lx) var(--ly),color-mix(in srgb,var(--acc) 24%,transparent),transparent 72%);mix-blend-mode:screen;opacity:calc(1 - var(--lg,0) * .92)}
+.a-glow{position:absolute;left:0;top:0;width:var(--gs);height:var(--gs);margin:calc(var(--gs) / -2) 0 0 calc(var(--gs) / -2);border-radius:50%;pointer-events:none;will-change:transform,opacity;transform:translate3d(62vw,42vh,0);background:radial-gradient(closest-side,color-mix(in srgb,var(--acc) 24%,transparent),transparent);mix-blend-mode:screen}
 .a-vig{position:absolute;inset:0;pointer-events:none;background:radial-gradient(130% 95% at 50% 45%,transparent 50%,rgba(0,0,0,.6))}
 .a-lines{position:absolute;inset:0}
 .a-lines li{position:absolute;left:6.5%;right:3%;top:var(--y);transform:translateY(-58%);font:italic 400 3.15cqw/1.1 var(--fd);color:var(--acc);white-space:nowrap;text-shadow:0 0 .7em color-mix(in srgb,var(--acc) 55%,transparent),0 1px 2px rgba(0,0,0,.95);opacity:0;visibility:hidden}
@@ -136,6 +138,7 @@ html:not(.touch) .hint-touch{display:none}
 .a-track figure::before{content:"";position:absolute;left:-30%;right:-30%;top:-18%;bottom:10%;background:radial-gradient(closest-side,color-mix(in srgb,var(--acc) 30%,transparent),transparent);opacity:var(--lit);pointer-events:none}
 .a-track img{position:relative;width:100%;height:auto;aspect-ratio:1000/1415;object-fit:cover;object-position:top;filter:brightness(calc((.26 + .74 * var(--lit)) * var(--bb,1))) sepia(calc(.4 * var(--lit)));box-shadow:0 30px 60px rgba(0,0,0,.65)}
 .a-track figcaption{position:relative;margin-top:18px;font-size:14px;line-height:1.45;color:var(--dim);opacity:calc(.62 + .38 * var(--lit))}
+.a-swipe{display:none;margin-top:14px;padding:0 16px;font:400 12px/1 var(--fl);letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
 .a-track figcaption b{display:block;margin-bottom:4px;font:var(--dw) 23px/1.15 var(--fd);color:var(--ink)}
 
 .a-make{position:relative;padding:clamp(100px,15vh,170px) clamp(16px,6vw,96px);overflow:hidden}
@@ -231,6 +234,8 @@ html:not(.touch) .hint-touch{display:none}
   .a-track{width:auto;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:34px 15vw 10px;gap:22px}
   .a-track::-webkit-scrollbar{display:none}
   .a-track figure{width:70vw;scroll-snap-align:center}
+  .a-swipe{display:block}
+  .a-stage{--base:9%}
   .a-cert{transform:rotate(-1.5deg)}
   .a-table,.a-table tbody{display:block}
   .a-table thead{display:none}
@@ -596,6 +601,7 @@ html:not(.touch) .hint-touch{display:none}
           </ol>
         </div>
       </div>
+      <div class="a-dark" aria-hidden="true"></div>
       <div class="a-glow" aria-hidden="true"></div>
       <div class="a-vig" aria-hidden="true"></div>
       <header class="a-top">
@@ -638,6 +644,7 @@ html:not(.touch) .hint-touch{display:none}
         <figure><img src="img/skoropis-1680-razmetka.webp" width="1200" height="1482" loading="lazy" alt="Страница переписи 1680-х годов с разметкой бюро"><figcaption><b>Скоропись 1680-х</b>Так мы её читаем: подписываем каждое слово</figcaption></figure>
         <figure><img src="img/otchet-glava.webp" width="1000" height="1415" loading="lazy" alt="Глава отчёта о предке"><figcaption><b>Глава о&nbsp;каждом предке</b>Документ, расшифровка, рассказ</figcaption></figure>
       </div>
+      <p class="a-swipe" aria-hidden="true">Листайте вбок →</p>
     </div>
   </section>
 
@@ -703,12 +710,12 @@ html:not(.touch) .hint-touch{display:none}
         <div class="b-bokeh"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
       </div>
       <div class="b-layers">
-        <figure class="b-layer" data-w="1000" data-h="1415" data-year="2026" data-r="-7"><img src="img/otchet-oblozhka.webp" width="1000" height="1415" alt="Обложка отчёта-книги «Род…», фамилия скрыта"></figure>
-        <figure class="b-layer" data-w="1000" data-h="1690" data-year="1917" data-r="6"><img src="img/krest-1917-zelenyj.webp" width="1000" height="1690" alt="Уведомление Красного Креста о раненом солдате, 1917"></figure>
-        <figure class="b-layer" data-w="1200" data-h="1713" data-year="1897" data-r="-5"><img src="img/perepis-1897-titul.webp" width="1200" height="1713" alt="Переписной лист 1897 года"></figure>
-        <figure class="b-layer" data-w="1600" data-h="1231" data-year="1858" data-r="5"><img src="img/revizskaya-1858.webp" width="1600" height="1231" alt="Ревизская сказка 1858 года"></figure>
-        <figure class="b-layer" data-w="814" data-h="504" data-year="1784" data-r="-4"><img src="img/karta-1784.webp" width="814" height="504" alt="Карта уезда 1784 года, фрагмент"></figure>
-        <figure class="b-layer" data-w="1000" data-h="1044" data-year="1699" data-r="6"><img src="img/chelobitnaya-1699.webp" width="1000" height="1044" alt="Челобитная конца XVII века"></figure>
+        <figure class="b-layer" data-w="1000" data-h="1415" data-year="2026" data-r="-7"><img loading="lazy" src="img/otchet-oblozhka.webp" width="1000" height="1415" alt="Обложка отчёта-книги «Род…», фамилия скрыта"></figure>
+        <figure class="b-layer" data-w="1000" data-h="1690" data-year="1917" data-r="6"><img loading="lazy" src="img/krest-1917-zelenyj.webp" width="1000" height="1690" alt="Уведомление Красного Креста о раненом солдате, 1917"></figure>
+        <figure class="b-layer" data-w="1200" data-h="1713" data-year="1897" data-r="-5"><img loading="lazy" src="img/perepis-1897-titul.webp" width="1200" height="1713" alt="Переписной лист 1897 года"></figure>
+        <figure class="b-layer" data-w="1600" data-h="1231" data-year="1858" data-r="5"><img loading="lazy" src="img/revizskaya-1858.webp" width="1600" height="1231" alt="Ревизская сказка 1858 года"></figure>
+        <figure class="b-layer" data-w="814" data-h="504" data-year="1784" data-r="-4"><img loading="lazy" src="img/karta-1784.webp" width="814" height="504" alt="Карта уезда 1784 года, фрагмент"></figure>
+        <figure class="b-layer" data-w="1000" data-h="1044" data-year="1699" data-r="6"><img loading="lazy" src="img/chelobitnaya-1699.webp" width="1000" height="1044" alt="Челобитная конца XVII века"></figure>
       </div>
       <!-- МЕСТО ПОД ВИДЕО: «камера проваливается» по прокрутке — см. B_MEDIA.tunnelVideo -->
       <video class="b-tvideo" muted playsinline preload="auto" hidden></video>
@@ -837,11 +844,11 @@ html:not(.touch) .hint-touch{display:none}
       </div>
       <div class="c-caps" aria-hidden="true"></div>
       <div class="c-plates">
-        <figure class="c-plate"><img src="img/otchet-oblozhka.webp" width="1000" height="1415" alt="Обложка отчёта-книги, фамилия скрыта"><figcaption><b>2026 · сегодня</b>Вы дарите сертификат. Через несколько месяцев у&nbsp;родителей в&nbsp;руках — отчёт-книга об&nbsp;их&nbsp;роде.</figcaption></figure>
-        <figure class="c-plate"><img src="img/krest-1917-zelenyj.webp" width="1000" height="1690" alt="Уведомление Красного Креста о раненом солдате, 1917"><figcaption><b>1917 · Красный Крест</b>Уведомление о&nbsp;раненом солдате: куда ранен и&nbsp;в&nbsp;какой лазарет попал. Военные архивы хранят и&nbsp;такие листки.</figcaption></figure>
-        <figure class="c-plate"><img src="img/perepis-1897-titul.webp" width="1200" height="1713" alt="Переписной лист 1897 года"><figcaption><b>1897 · перепись</b>Первая всеобщая перепись. Лист двора: кто хозяин, из&nbsp;чего дом, сколько живёт душ.</figcaption></figure>
-        <figure class="c-plate"><img src="img/chelobitnaya-1699.webp" width="1000" height="1044" alt="Челобитная конца XVII века"><figcaption><b>1699 · челобитная</b>Скоропись конца XVII века. Мы&nbsp;читаем такие документы строка в&nbsp;строку.</figcaption></figure>
-        <figure class="c-plate"><img src="img/piscovaya-xvii.webp" width="1200" height="1600" alt="Перепись XVII века"><figcaption><b>≈ 1615 · 13 поколений</b>Так глубоко мы&nbsp;дошли для одной из&nbsp;семей: самый ранний предок родился около 1615&nbsp;года. На&nbsp;снимке — перепись XVII&nbsp;века.</figcaption></figure>
+        <figure class="c-plate"><img loading="lazy" src="img/otchet-oblozhka.webp" width="1000" height="1415" alt="Обложка отчёта-книги, фамилия скрыта"><figcaption><b>2026 · сегодня</b>Вы дарите сертификат. Через несколько месяцев у&nbsp;родителей в&nbsp;руках — отчёт-книга об&nbsp;их&nbsp;роде.</figcaption></figure>
+        <figure class="c-plate"><img loading="lazy" src="img/krest-1917-zelenyj.webp" width="1000" height="1690" alt="Уведомление Красного Креста о раненом солдате, 1917"><figcaption><b>1917 · Красный Крест</b>Уведомление о&nbsp;раненом солдате: куда ранен и&nbsp;в&nbsp;какой лазарет попал. Военные архивы хранят и&nbsp;такие листки.</figcaption></figure>
+        <figure class="c-plate"><img loading="lazy" src="img/perepis-1897-titul.webp" width="1200" height="1713" alt="Переписной лист 1897 года"><figcaption><b>1897 · перепись</b>Первая всеобщая перепись. Лист двора: кто хозяин, из&nbsp;чего дом, сколько живёт душ.</figcaption></figure>
+        <figure class="c-plate"><img loading="lazy" src="img/chelobitnaya-1699.webp" width="1000" height="1044" alt="Челобитная конца XVII века"><figcaption><b>1699 · челобитная</b>Скоропись конца XVII века. Мы&nbsp;читаем такие документы строка в&nbsp;строку.</figcaption></figure>
+        <figure class="c-plate"><img loading="lazy" src="img/piscovaya-xvii.webp" width="1200" height="1600" alt="Перепись XVII века"><figcaption><b>≈ 1615 · 13 поколений</b>Так глубоко мы&nbsp;дошли для одной из&nbsp;семей: самый ранний предок родился около 1615&nbsp;года. На&nbsp;снимке — перепись XVII&nbsp;века.</figcaption></figure>
       </div>
       <div class="c-ruler" aria-hidden="true">
         <span style="left:0%">1600</span><span style="left:23.5%">1700</span><span style="left:46.9%">1800</span><span style="left:70.4%">1900</span><span style="left:93.9%">2000</span><i></i>
@@ -1089,7 +1096,8 @@ var B_MEDIA = { heroVideo: '', heroVideoMobile: '', tunnelVideo: '', tunnelVideo
     var L0 = listeners();
     var hero = $('.a-hero', rt), stage = $('.a-stage', rt), docEl = $('.a-doc', rt), linesBox = $('.a-lines', rt);
     var lines = $$('.a-lines li', rt), copy = $('.a-copy', rt), found = $('.a-found', rt), lamp = $('.a-lamp', rt);
-    var AR = 1000 / 1044, S = { grow: 0 }, W = 0, H = 0, cover = 1;
+    var AR = 1000 / 1044, S = { grow: 0 }, W = 0, H = 0, cover = 1, R0 = 200;
+    var dark = $('.a-dark', rt), glow = $('.a-glow', rt);
     function size() {
       W = stage.clientWidth; H = stage.clientHeight;
       var dW, dH;
@@ -1104,6 +1112,10 @@ var B_MEDIA = { heroVideo: '', heroVideoMobile: '', tunnelVideo: '', tunnelVideo
         linesBox.style.padding = '';
       }
       docEl.style.width = dW + 'px'; docEl.style.height = dH + 'px';
+      R0 = Math.max(120, Math.min(W, H) * (mobile() ? .34 : .27));
+      stage.style.setProperty('--dr', Math.round(R0) + 'px');
+      stage.style.setProperty('--ds', Math.ceil(Math.hypot(W, H) * 2.2) + 'px');
+      stage.style.setProperty('--gs', Math.round(R0 * 2.4) + 'px');
       if (!MOTION) docEl.style.transform = 'translate(-50%,-50%) scale(' + cover + ')';
     }
     size();
@@ -1112,7 +1124,6 @@ var B_MEDIA = { heroVideo: '', heroVideoMobile: '', tunnelVideo: '', tunnelVideo
     /* лампа: следует за мышью или пальцем, без них — ходит сама и чуть дрожит, как пламя */
     var L = { x: W * .64, y: H * .42, tx: W * .64, ty: H * .42, last: -1e9, user: false };
     var raf = 0, running = false, t0 = performance.now();
-    function baseR() { return Math.max(120, Math.min(W, H) * (mobile() ? .34 : .27)); }
     function frame(now) {
       var t = (now - t0) / 1000;
       var idle = !L.user || (TOUCH && now - L.last > 2600);
@@ -1120,11 +1131,9 @@ var B_MEDIA = { heroVideo: '', heroVideoMobile: '', tunnelVideo: '', tunnelVideo
       var k = RM ? 1 : .085;
       L.x += (L.tx - L.x) * k; L.y += (L.ty - L.y) * k;
       var fl = RM ? 1 : 1 + .022 * Math.sin(t * 8.3) + .014 * Math.sin(t * 21.7 + 1);
-      var r = baseR() * fl + S.grow * Math.hypot(W, H) * 2.4;
-      stage.style.setProperty('--lx', L.x.toFixed(1) + 'px');
-      stage.style.setProperty('--ly', L.y.toFixed(1) + 'px');
-      stage.style.setProperty('--lr', r.toFixed(1) + 'px');
-      stage.style.setProperty('--lg', S.grow.toFixed(3));
+      var sc = fl * (1 + S.grow * 6), tr = 'translate3d(' + L.x.toFixed(1) + 'px,' + L.y.toFixed(1) + 'px,0) scale(' + sc.toFixed(3) + ')';
+      dark.style.transform = tr; glow.style.transform = tr;
+      dark.style.opacity = (1 - S.grow).toFixed(3); glow.style.opacity = (1 - S.grow * .92).toFixed(3);
       if (running) raf = requestAnimationFrame(frame);
     }
     function start() { if (!running) { running = true; raf = requestAnimationFrame(frame); } }
@@ -1169,7 +1178,7 @@ var B_MEDIA = { heroVideo: '', heroVideoMobile: '', tunnelVideo: '', tunnelVideo
       gsap.set(docEl, { xPercent: -50, yPercent: -50 });
       var tl = gsap.timeline({
         scrollTrigger: {
-          trigger: hero, start: 'top top', end: '+=180%', pin: true, scrub: .7, invalidateOnRefresh: true,
+          trigger: hero, start: 'top top', end: '+=180%', pin: true, anticipatePin: 1, scrub: .7, invalidateOnRefresh: true,
           onRefreshInit: size,
           onLeave: function () { lamp.classList.add('on'); },
           onEnterBack: function () { lamp.classList.remove('on'); }
